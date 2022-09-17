@@ -17,6 +17,7 @@ img {
   max-width: 100%;
 }
 
+/* Task1 - Color Switcher  */
 .buttons-wrap {
   width: 340px;
   margin-left: auto;
@@ -32,6 +33,7 @@ img {
   text-transform: uppercase;
 }
 
+/* Task2 - Timer  */
 .timer {
   display: flex;
   margin-top: 10px;
