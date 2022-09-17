@@ -65,7 +65,7 @@ function updateInterfaceClock({ days, hours, minutes, seconds }) {
     countdown.stop();
     disableButtons();
     Notiflix.Notify.info('COUNTDOWN IS OVER. Thank you for cooperation!...');
-  } else if (seconds < 00) {
+  } else if (seconds < 0) {
     resetCountdown();
     Notiflix.Notify.warning("Something's wrong! Please choose date again");
   }
