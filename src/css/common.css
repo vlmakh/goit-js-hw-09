@@ -113,7 +113,7 @@ img {
   width: 450px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   margin-left: auto;
   margin-right: auto;
 }
@@ -129,4 +129,9 @@ img {
   display: flex;
   justify-content: space-between;
   font-weight: 700;
+}
+
+.form__submit {
+  font-weight: 700;
+  height: 30px;
 }
