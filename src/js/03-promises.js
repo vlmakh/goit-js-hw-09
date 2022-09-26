@@ -8,6 +8,11 @@ const refs = {
 };
 let i = 1;
 
+Notiflix.Notify.init({
+  position: 'right-top', // 'right-top' - 'right-bottom' - 'left-top' - 'left-bottom' - 'center-top' - 'center-bottom' - 'center-center'
+  cssAnimationStyle: 'from-right', // 'fade' - 'zoom' - 'from-right' - 'from-top' - 'from-bottom' - 'from-left'
+});
+
 form.addEventListener('submit', onFormSubmit);
 
 function onFormSubmit(e) {
