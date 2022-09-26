@@ -9,26 +9,34 @@
   <body>
     <p><a href="index.html">Go back</a></p>
 
-    <input type="text" id="datetime-picker" />
-    <button type="button" data-start>Start</button>
-    <button type="button" data-reset>Reset</button>
+    <div class="timer-wrap">
+      <input type="text" class="timer__date" id="datetime-picker" />
 
-    <div class="timer">
-      <div class="field">
-        <span class="value" data-days>00</span>
-        <span class="label">Days</span>
-      </div>
-      <div class="field">
-        <span class="value" data-hours>00</span>
-        <span class="label">Hours</span>
-      </div>
-      <div class="field">
-        <span class="value" data-minutes>00</span>
-        <span class="label">Minutes</span>
-      </div>
-      <div class="field">
-        <span class="value" data-seconds>00</span>
-        <span class="label">Seconds</span>
+      <ul class="timer is-inactive" data-timer>
+        <li class="timer__field">
+          <span class="timer__value" data-days>00</span>
+          <span class="timer__label">DYS</span>
+        </li>
+        <li class="timer__gap">:</li>
+        <li class="timer__field">
+          <span class="timer__value" data-hours>00</span>
+          <span class="timer__label">HRS</span>
+        </li>
+        <li class="timer__gap">:</li>
+        <li class="timer__field">
+          <span class="timer__value" data-minutes>00</span>
+          <span class="timer__label">MIN</span>
+        </li>
+        <li class="timer__gap">:</li>
+        <li class="timer__field">
+          <span class="timer__value" data-seconds>00</span>
+          <span class="timer__label">SEC</span>
+        </li>
+      </ul>
+
+      <div class="timer__control">
+        <button type="button" class="timer__btn" data-start>Start</button>
+        <button type="button" class="timer__btn" data-reset>Reset</button>
       </div>
     </div>
 

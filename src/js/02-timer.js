@@ -2,6 +2,11 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import Notiflix from 'notiflix';
 
+Notiflix.Notify.init({
+  position: 'center-center', // 'right-top' - 'right-bottom' - 'left-top' - 'left-bottom' - 'center-top' - 'center-bottom' - 'center-center'
+  cssAnimationStyle: 'zoom', // 'fade' - 'zoom' - 'from-right' - 'from-top' - 'from-bottom' - 'from-left'
+});
+
 const refs = {
   startBtn: document.querySelector('[data-start]'),
   resetBtn: document.querySelector('[data-reset]'),
@@ -10,6 +15,7 @@ const refs = {
   fieldMin: document.querySelector('[data-minutes]'),
   fieldSec: document.querySelector('[data-seconds]'),
   inputRef: document.querySelector('#datetime-picker'),
+  timerRef: document.querySelector('[data-timer]'),
 };
 
 const options = {
@@ -30,8 +36,7 @@ const options = {
 };
 
 flatpickr(refs.inputRef, options);
-refs.startBtn.disabled = true;
-refs.resetBtn.disabled = true;
+disableButtons();
 
 const countdown = {
   intervalId: null,
@@ -84,13 +89,16 @@ function startCountdown() {
   refs.startBtn.removeEventListener('click', startCountdown);
   refs.resetBtn.disabled = false;
   refs.resetBtn.addEventListener('click', resetCountdown);
-  // updateInterfaceClock(resultTime);
+  refs.inputRef.disabled = true;
+  refs.timerRef.classList.remove('is-inactive');
 }
 
 function resetCountdown() {
   countdown.stop();
   disableButtons();
   resetInterfaceClock();
+  refs.inputRef.disabled = false;
+  refs.timerRef.classList.add('is-inactive');
 }
 
 function convertMs(ms) {
